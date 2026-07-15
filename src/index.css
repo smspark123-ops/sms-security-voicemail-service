@@ -1,0 +1,89 @@
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+:root {
+  --maroon: #7a1f3d;
+  --maroon-dark: #641731;
+}
+html, body, #root {
+  height: 100%;
+}
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f5f7;
+  background-image: radial-gradient(circle at 8% 0%, rgba(122,31,61,.045), transparent 26rem), radial-gradient(circle at 92% 18%, rgba(13,148,136,.035), transparent 24rem);
+  color: #1d1d1f;
+}
+
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #7a1f3d; outline-offset: 2px; }
+
+@media (max-width: 767px) {
+  body { padding-bottom: 82px; }
+}
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.28);
+  background-clip: content-box;
+}
+/* Remove number input spinners for a cleaner look */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  @page { size: landscape; margin: 10mm; }
+  body { background: white !important; color: #111 !important; }
+  header, footer, .no-print { display: none !important; }
+  main, #root { display: block !important; }
+  .print-report { display: block !important; font-family: Arial, sans-serif; }
+  .print-report .report-heading { display: flex !important; align-items: center; justify-content: space-between; border-bottom: 3px solid #7a1f3d; padding-bottom: 10px; margin-bottom: 10px; }
+  .report-brand { display: flex; align-items: center; gap: 10px; }
+  .report-brand img { width: 38px; height: 38px; object-fit: contain; }
+  .print-report h1 { margin: 1px 0; font-size: 17px; font-weight: 800; letter-spacing: -.02em; }
+  .print-report .report-kicker { margin: 0; font-size: 7px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: #7a1f3d; }
+  .print-report .report-subtitle { margin: 0; font-size: 7px; color: #666; }
+  .report-meta { display: flex; flex-direction: column; text-align: right; font-size: 8px; color: #555; }
+  .report-meta strong { font-size: 11px; color: #111; }
+  .report-summary { display: grid; grid-template-columns: 90px 110px 1fr 130px; gap: 6px; margin-bottom: 8px; }
+  .report-summary div { border: 1px solid #ddd; border-radius: 4px; padding: 6px; }
+  .report-summary span { display: block; font-size: 6px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #777; }
+  .report-summary strong { display: block; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 9px; }
+  .report-notice { margin-bottom: 8px; border-left: 3px solid #d97706; background: #fff7ed !important; padding: 5px 7px; font-size: 7px; color: #7c2d12; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-report table { width: 100%; border-collapse: collapse; font-size: 7px; }
+  .print-report thead { display: table-header-group; }
+  .print-report tr { break-inside: avoid; }
+  .print-report th { background: #7a1f3d !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-report tbody tr:nth-child(even) { background: #f7f7f8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-report th, .print-report td { border: 1px solid #c9c9cc; padding: 3.5px; text-align: left; vertical-align: top; }
+  .report-signoff { display: grid; grid-template-columns: 1.4fr .7fr 1.4fr; gap: 20px; margin-top: 18px; font-size: 8px; }
+  .report-signoff span { display: inline-block; width: 65%; border-bottom: 1px solid #555; }
+  .print-report footer { display: block !important; margin-top: 12px; border-top: 1px solid #ddd; padding-top: 5px; font-size: 7px; color: #777; }
+}
